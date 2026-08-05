@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5qsbwunxqcqy"]
+
+[ext_resource type="Shader" uid="uid://bu5jg3ufh284e" path="res://shader/dissolve/VisualShader_Dissolve.tres" id="1_tnqqq"]
+[ext_resource type="Texture2D" uid="uid://2vtts2nhmj6k" path="res://icon.svg" id="2_vtj3f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_itdrt"]
+shader = ExtResource("1_tnqqq")
+shader_parameter/Auto = true
+shader_parameter/Speed = 0.5
+shader_parameter/Value = 0.0
+
+[node name="Canvas" type="Control" unique_id=189901869]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1602559555]
+material = SubResource("ShaderMaterial_itdrt")
+position = Vector2(589, 315)
+texture = ExtResource("2_vtj3f")
