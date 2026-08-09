@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5qsbwunxqcqy"]
 
-[ext_resource type="Shader" uid="uid://cw837ip83oku6" path="res://shader/Shader_Shield.gdshader" id="1_tnqqq"]
+[ext_resource type="Shader" uid="uid://cw837ip83oku6" path="res://shader/shield/Shader_Shield.gdshader" id="1_tnqqq"]
 [ext_resource type="Texture2D" uid="uid://2vtts2nhmj6k" path="res://icon.svg" id="2_vtj3f"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vtj3f"]
