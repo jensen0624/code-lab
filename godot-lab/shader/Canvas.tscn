@@ -1,19 +1,39 @@
 [gd_scene format=3 uid="uid://b5qsbwunxqcqy"]
 
-[ext_resource type="Shader" uid="uid://bu5jg3ufh284e" path="res://shader/dissolve/VisualShader_Dissolve.tres" id="1_tnqqq"]
+[ext_resource type="Shader" uid="uid://cw837ip83oku6" path="res://shader/Shader_Shield.gdshader" id="1_tnqqq"]
 [ext_resource type="Texture2D" uid="uid://2vtts2nhmj6k" path="res://icon.svg" id="2_vtj3f"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vtj3f"]
+noise_type = 4
+frequency = 0.0044
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tnqqq"]
+noise = SubResource("FastNoiseLite_vtj3f")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itdrt"]
 shader = ExtResource("1_tnqqq")
-shader_parameter/Auto = true
-shader_parameter/Speed = 0.5
-shader_parameter/Value = 0.0
+shader_parameter/radius = 0.5
+shader_parameter/width = 0.5
+shader_parameter/highlight_center = Vector2(0.2, 0.2)
+shader_parameter/highlight_intensity = 1.0
+shader_parameter/shape_color = Color(0.149, 0.78, 0.902, 1)
+shader_parameter/highlight_color = Color(0.772, 0.723, 0.35, 1)
+shader_parameter/glow = 0.33600001596
+shader_parameter/noise = SubResource("NoiseTexture2D_tnqqq")
+shader_parameter/speed = 0.2
+shader_parameter/scale = 3.0
+shader_parameter/scale_speed = 1.0
 
 [node name="Canvas" type="Control" unique_id=189901869]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -51.0
+offset_right = -30.0
+offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 
