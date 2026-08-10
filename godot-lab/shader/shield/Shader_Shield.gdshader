@@ -9,7 +9,7 @@ uniform float highlight_intensity: hint_range(0.0, 2.0) = 1.0;
 
 uniform vec3 shape_color: source_color = vec3(0.149, 0.78, 0.902);
 uniform vec3 highlight_color: source_color = vec3(0.772, 0.723, 0.35);
-uniform float glow: hint_range(0.0, 1.0) = 0.0;
+uniform float glow: hint_range(0.0, 1.0) = 0.5;
 
 uniform sampler2D noise: repeat_enable;
 uniform float speed: hint_range(0.0, 1.0) = 0.2;
