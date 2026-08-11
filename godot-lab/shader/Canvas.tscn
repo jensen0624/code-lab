@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2vtts2nhmj6k" path="res://icon.svg" id="2_vtj3f"]
 [ext_resource type="Shader" uid="uid://cw837ip83oku6" path="res://shader/shield/Shader_Shield.gdshader" id="3_xsf37"]
 [ext_resource type="Shader" uid="uid://dip1dswek11uq" path="res://shader/fire/Shader_Fire.gdshader" id="5_xsf37"]
+[ext_resource type="Shader" uid="uid://k2wt8ioo50df" path="res://shader/dissolve/Shader_Dissolve.gdshader" id="6_q5img"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ofyqx"]
 shader = ExtResource("1_tnqqq")
@@ -42,6 +43,21 @@ shader_parameter/color_out = Color(0.969, 0.169, 0.027, 1)
 shader_parameter/color_mid = Color(0.949, 0.357, 0.106, 1)
 shader_parameter/color_in = Color(0.961, 0.867, 0.392, 1)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hcy8x"]
+noise_type = 0
+frequency = 0.0051
+fractal_gain = 0.415
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q5img"]
+noise = SubResource("FastNoiseLite_hcy8x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p747k"]
+shader = ExtResource("6_q5img")
+shader_parameter/progress = 0.72800003458
+shader_parameter/progress_gradient = 0.33600001596
+shader_parameter/color_dissolve = Color(0.949, 0.357, 0.106, 1)
+shader_parameter/noise = SubResource("NoiseTexture2D_q5img")
+
 [node name="Canvas" type="Control" unique_id=189901869]
 layout_mode = 3
 anchors_preset = 15
@@ -68,4 +84,9 @@ texture = ExtResource("2_vtj3f")
 [node name="Icon2" type="Sprite2D" parent="." unique_id=2128911457]
 material = SubResource("ShaderMaterial_vsoo2")
 position = Vector2(587, 236)
+texture = ExtResource("2_vtj3f")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=393218976]
+material = SubResource("ShaderMaterial_p747k")
+position = Vector2(784, 312)
 texture = ExtResource("2_vtj3f")
