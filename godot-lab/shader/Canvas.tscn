@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2vtts2nhmj6k" path="res://icon.svg" id="2_vtj3f"]
 [ext_resource type="Shader" uid="uid://cw837ip83oku6" path="res://shader/shield/Shader_Shield.gdshader" id="3_xsf37"]
 [ext_resource type="Shader" uid="uid://dip1dswek11uq" path="res://shader/fire/Shader_Fire.gdshader" id="5_xsf37"]
-[ext_resource type="Shader" uid="uid://1e6yy8ggibal" path="res://shader/pixel/Shader_Pixel.gdshader" id="6_q5img"]
+[ext_resource type="Shader" uid="uid://dpblimni1uove" path="res://shader/zoom/Shader_Zoom.gdshader" id="6_q5img"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ofyqx"]
 shader = ExtResource("1_tnqqq")
@@ -43,9 +43,11 @@ shader_parameter/color_out = Color(0.969, 0.169, 0.027, 1)
 shader_parameter/color_mid = Color(0.949, 0.357, 0.106, 1)
 shader_parameter/color_in = Color(0.961, 0.867, 0.392, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p747k"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bvpnu"]
 shader = ExtResource("6_q5img")
-shader_parameter/pixel_size = 1.0
+shader_parameter/zoom = 0.3150000149625
+shader_parameter/blur = 0.4410000209475
+shader_parameter/radius = 0.3110000147725
 
 [node name="Canvas" type="Control" unique_id=189901869]
 layout_mode = 3
@@ -75,7 +77,7 @@ material = SubResource("ShaderMaterial_vsoo2")
 position = Vector2(587, 236)
 texture = ExtResource("2_vtj3f")
 
-[node name="Icon3" type="Sprite2D" parent="." unique_id=393218976]
-material = SubResource("ShaderMaterial_p747k")
-position = Vector2(784, 312)
+[node name="Icon3" type="Sprite2D" parent="." unique_id=1202297220]
+material = SubResource("ShaderMaterial_bvpnu")
+position = Vector2(585, 252)
 texture = ExtResource("2_vtj3f")
